@@ -1,9 +1,9 @@
 package com.zh.file.browser.config.service
 
-import com.zh.file.browser.model.Directory
+import com.zh.file.browser.model.LeafDirectory
 import java.io.File
 
-class DirectoryAnalyzer(
+class LeafDirectoryAnalyzer(
     private val directory: File
 ) {
     companion object {
@@ -20,13 +20,13 @@ class DirectoryAnalyzer(
 
     private val children = directory.listFiles()
 
-    fun analysis(): Directory {
+    fun analysis(): LeafDirectory {
         if (! directory.isDirectory) {
             throw IllegalStateException("${directory.absolutePath} is not a directory.")
         }
-        val txtFile = getTxtFile()
+        val txtFile: File? = getTxtFile()
 
-        return Directory(
+        return LeafDirectory(
             path = directory.absolutePath,
             txtFile = txtFile,
             imageFiles = getImageFiles(),

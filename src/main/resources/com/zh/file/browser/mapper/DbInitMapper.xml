@@ -23,6 +23,7 @@
 			`codec` VARCHAR(45) NOT NULL,
 			`avg_bitrate` VARCHAR(45) NOT NULL,
 			`running_time` INT NOT NULL,
+			`file_size` INT NOT NULL,
 			PRIMARY KEY (`video_id`)
 		)
 	</insert>

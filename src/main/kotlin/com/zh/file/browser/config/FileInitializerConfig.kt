@@ -1,7 +1,7 @@
 package com.zh.file.browser.config
 
-import com.zh.file.browser.config.service.DirectoryAnalyzer
 import com.zh.file.browser.config.service.FileBrowser
+import com.zh.file.browser.config.service.LeafDirectoryAnalyzer
 import com.zh.file.browser.ffmpeg.VideoAnalyser
 import com.zh.file.browser.mapper.FbDirectoryMapper
 import com.zh.file.browser.model.FbDirectory
@@ -21,9 +21,9 @@ class FileInitializerConfig {
     @PostConstruct
     fun init() {
         val rootDirectory = File(projectProperties.rootPath!!)
-        val directoryList = FileBrowser(rootDirectory).getDirectoryList()
-        val analysedList = directoryList.map {
-            return@map DirectoryAnalyzer(it).analysis()
+        val leafDirectoryList = FileBrowser(rootDirectory).getDirectoryList()
+        val analysedList = leafDirectoryList.map {
+            return@map LeafDirectoryAnalyzer(it).analysis()
         }
 
         analysedList.forEach {

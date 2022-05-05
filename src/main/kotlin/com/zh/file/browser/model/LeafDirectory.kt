@@ -4,7 +4,7 @@ import com.zh.file.browser.config.service.TxtAnalysisResult
 import com.zh.file.browser.config.service.TxtFileAnalyser
 import java.io.File
 
-data class Directory(
+data class LeafDirectory(
     val path: String,
     val txtFile: File?,
     val imageFiles: List<File>,

@@ -1,13 +1,13 @@
 package com.zh.file.browser.config.service
 
 import com.zh.file.browser.TempFileTestPrep
-import com.zh.file.browser.model.Directory
+import com.zh.file.browser.model.LeafDirectory
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.io.TempDir
 import java.io.File
 
-internal class DirectoryAnalyzerTest {
+internal class LeafDirectoryAnalyzerTest {
 
     @TempDir
     private lateinit var tempDir: File
@@ -19,7 +19,7 @@ internal class DirectoryAnalyzerTest {
         val testDirectory = File(tempDir, "0BwRXrQIUBo")
 
         // when
-        val result: Directory = DirectoryAnalyzer(testDirectory).analysis()
+        val result: LeafDirectory = LeafDirectoryAnalyzer(testDirectory).analysis()
 
         // then
         assertThat(result.txtFile).isNotNull()
