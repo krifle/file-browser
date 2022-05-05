@@ -23,4 +23,24 @@ class FbCastingMapperTest : AbstractDbTest {
         assertThat(inserted.first().actorName).isEqualTo("some Actor")
         assertThat(inserted.first().directoryId).isEqualTo("ASDF")
     }
+
+    @Test
+    fun `listAllDistinctActors`() {
+        // given
+        val castings = listOf(
+            FbCastingTest.mockOne("_directoryId1", "_actor1"),
+            FbCastingTest.mockOne("_directoryId1", "_actor2"),
+            FbCastingTest.mockOne("_directoryId2", "_actor3"),
+            FbCastingTest.mockOne("_directoryId2", "_actor1"),
+            FbCastingTest.mockOne("_directoryId3", "_actor5"),
+            FbCastingTest.mockOne("_directoryId4", "_actor5")
+        )
+        castings.forEach { sut.insertOne(it) }
+
+        // when
+        val actors = sut.listAllDistinctActors()
+
+        // then
+        assertThat(actors).containsAnyOf("_actor1", "_actor2", "_actor3", "_actor4")
+    }
 }

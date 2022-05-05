@@ -9,5 +9,13 @@ internal class FbCastingTest {
                 actorName = "some Actor"
             )
         }
+
+        fun mockOne(directoryId: String, actorName: String): FbCasting {
+            return FbCasting(
+                castingId = null,
+                directoryId = directoryId,
+                actorName = actorName
+            )
+        }
     }
 }

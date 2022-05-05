@@ -23,4 +23,23 @@ class FbGenreMapperTest : AbstractDbTest {
         assertThat(inserted.first().genreName).isEqualTo("some genre")
         assertThat(inserted.first().directoryId).isEqualTo("ZXCZV")
     }
+
+    @Test
+    fun `listAllDistinctGenre`() {
+        // given
+        val sampleGenreList = listOf(
+            FbGenreTest.mockOne("_directoryId1", "_genre1"),
+            FbGenreTest.mockOne("_directoryId2", "_genre2"),
+            FbGenreTest.mockOne("_directoryId3", "_genre1"),
+            FbGenreTest.mockOne("_directoryId3", "_genre2"),
+            FbGenreTest.mockOne("_directoryId4", "_genre3")
+        )
+        sampleGenreList.forEach { sut.insertOne(it) }
+
+        // when
+        val genreList = sut.listAllDistinctGenre()
+
+        // then
+        assertThat(genreList).containsAnyOf("_genre1", "_genre2", "_genre3")
+    }
 }

@@ -31,4 +31,12 @@ interface FbGenreMapper {
         )
     """)
     fun insertOne(@Param("fbGenre") fbGenre: FbGenre)
+
+    @Select("""
+        SELECT DISTINCT
+            genre_name
+        FROM
+            fb_genre
+    """)
+    fun listAllDistinctGenre(): List<String>
 }

@@ -31,4 +31,12 @@ interface FbCastingMapper {
         )
     """)
     fun insertOne(@Param("fbCasting") fbCasting: FbCasting)
+
+    @Select("""
+        SELECT DISTINCT
+            actor_name
+        FROM
+            fb_casting
+    """)
+    fun listAllDistinctActors(): List<String>
 }
