@@ -18,7 +18,7 @@ class FbDirectoryMapperTest : AbstractDbTest {
         sut.insertOne(fbDirectory)
 
         // select test
-        val inserted = sut.getOne("test-directory-id1")
+        val inserted = sut.getOne("test-directory-id1")!!
         assertThat(inserted.directoryId).isEqualTo(fbDirectory.directoryId)
         assertThat(inserted.path).isEqualTo(fbDirectory.path)
         assertThat(inserted.description).isEqualTo(fbDirectory.description)

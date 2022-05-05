@@ -34,7 +34,8 @@ class VideoAnalyser(
                 fps = videoResult.fps,
                 codec = videoResult.codec,
                 avgBitrate = videoResult.avgBitrate.toLong(),
-                runningTime = videoResult.duration.toDouble().toLong()
+                runningTime = videoResult.duration.toDouble().toLong(),
+                fileSize = inputFile.length()
             )
         } catch (e: java.lang.NumberFormatException) {
             logger.error("Illegal number convertion for {}", commandList.joinToString(" "))

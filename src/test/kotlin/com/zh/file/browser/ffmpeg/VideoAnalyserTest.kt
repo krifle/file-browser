@@ -25,6 +25,7 @@ internal class VideoAnalyserTest {
         assertThat(result.codec).isEqualTo("h264")
         assertThat(result.avgBitrate).isEqualTo(196296L)
         assertThat(result.runningTime).isEqualTo(30L)
+        assertThat(result.fileSize).isEqualTo(1024904L)
     }
 }
 

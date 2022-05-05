@@ -29,9 +29,11 @@ class FileInitializerConfig {
         analysedList.forEach {
             val fbDirectory = fbDirectoryMapper.getOne(it.getId())
             if (fbDirectory != null) {
+                // 파일들의 내용을 업데이트 한다.
                 return@forEach
             }
 
+            // 파일들의 내용을 insert 한다. ffmpeg 도 돌려서 분석 한다.
             val videoInfo = VideoAnalyser(projectProperties.ffprobePath!!, File(it.path)).getInfo()
             FbDirectory(
                 directoryId = it.getId(),
