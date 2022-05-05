@@ -2,6 +2,7 @@ package com.zh.file.browser.model
 
 import com.zh.file.browser.config.service.TxtAnalysisResult
 import com.zh.file.browser.config.service.TxtFileAnalyser
+import org.apache.commons.io.FilenameUtils
 import java.io.File
 
 data class LeafDirectory(
@@ -11,7 +12,7 @@ data class LeafDirectory(
     val videoFiles: List<File>
 ) {
     fun getId(): String {
-        return File(path).name
+        return FilenameUtils.getName(path)
     }
 
     fun analyseTxtFile(): TxtAnalysisResult? {

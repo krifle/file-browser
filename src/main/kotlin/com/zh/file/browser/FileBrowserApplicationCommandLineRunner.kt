@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Profile
 import org.springframework.stereotype.Component
 import java.awt.EventQueue
 
+@Profile("!dao")
 @Component
-@Profile("release")
 class FileBrowserApplicationCommandLineRunner : CommandLineRunner {
 
     @Autowired

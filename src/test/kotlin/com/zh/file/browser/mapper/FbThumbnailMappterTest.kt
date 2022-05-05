@@ -23,4 +23,13 @@ class FbThumbnailMappterTest : AbstractDbTest {
         assertThat(inserted.first().videoId).isEqualTo(-100)
         assertThat(inserted.first().thumbnailPath).isEqualTo("/some/thumbnail/path")
     }
+
+    @Test
+    fun `list for not existing videoId`() {
+        // given // when
+        val result = sut.listThumbnailsByVideoId(-10213)
+
+        // then
+        assertThat(result).isEmpty()
+    }
 }
