@@ -38,7 +38,11 @@ class LeafDirectoryAnalyzer(
         if (children.isNullOrEmpty()) {
             return null
         }
-        return children.first { it.extension.lowercase() == "txt" }
+        return try {
+            children.first { it.extension.lowercase() == "txt" }
+        } catch (e: NoSuchElementException) {
+            null
+        }
     }
 
     private fun getImageFiles(): List<File> {

@@ -36,7 +36,7 @@ class LeafDirectoryManager {
         insertFbImages(leafDirectory)
 
         leafDirectory.analyseTxtFile()?.let { analysisResult ->
-            fbDirectory.description = analysisResult.description
+            fbDirectory.description = analysisResult.description.take(20480)
             insertGenreList(leafDirectory.getId(), analysisResult)
             insertCastingList(leafDirectory.getId(), analysisResult)
         }

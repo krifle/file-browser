@@ -12,15 +12,18 @@ class FileBrowser(
         return directoryList.toList()
     }
 
-    private fun searchRecursive(f: File) {
-        if (!f.exists()) {
-            throw IllegalStateException("file does not exists: ${f.absolutePath}")
+    private fun searchRecursive(file: File) {
+        if (!file.exists()) {
+            throw IllegalStateException("file does not exists: ${file.absolutePath}")
         }
 
-        if (f.isDirectory) {
-            directoryList.add(f)
+        if (file.isDirectory) {
+            val children = file.listFiles() ?: throw IllegalStateException("child file does not exists ${file.absolutePath}")
 
-            val children = f.listFiles() ?: throw IllegalStateException("child file does not exists ${f.absolutePath}")
+            if (children.none { it.isDirectory }) {
+                directoryList.add(file)
+            }
+
             children.forEach {
                 searchRecursive(it)
             }

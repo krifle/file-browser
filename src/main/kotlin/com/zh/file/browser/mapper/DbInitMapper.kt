@@ -10,7 +10,7 @@ interface DbInitMapper {
         CREATE TABLE IF NOT EXISTS `fb_directory` (
             `directory_id` VARCHAR(200) NOT NULL,
             `path` VARCHAR(255) NOT NULL,
-            `description` VARCHAR(1024) NULL,
+            `description` VARCHAR(20480) NULL,
             PRIMARY KEY (`directory_id`)
         )
     """)
@@ -37,7 +37,7 @@ interface DbInitMapper {
         CREATE TABLE IF NOT EXISTS `fb_image` (
             `image_id` INT NOT NULL AUTO_INCREMENT,
             `directory_id` VARCHAR(200) NOT NULL,
-            `image_path` VARCHAR(45) NULL,
+            `image_path` VARCHAR(255) NULL,
             PRIMARY KEY (`image_id`)
         );
     """)
@@ -47,7 +47,7 @@ interface DbInitMapper {
         CREATE TABLE IF NOT EXISTS `fb_casting` (
             `casting_id` INT NOT NULL AUTO_INCREMENT,
             `directory_id` VARCHAR(200) NOT NULL,
-            `actor_name` VARCHAR(45) NULL,
+            `actor_name` VARCHAR(255) NULL,
             PRIMARY KEY (`casting_id`)
         )
     """)
@@ -57,7 +57,7 @@ interface DbInitMapper {
         CREATE TABLE IF NOT EXISTS `fb_genre` (
             `genre_id` INT NOT NULL AUTO_INCREMENT,
             `directory_id` VARCHAR(200) NOT NULL,
-            `genre_name` VARCHAR(45) NULL,
+            `genre_name` VARCHAR(255) NULL,
             PRIMARY KEY (`genre_id`)
         )
     """)
@@ -67,7 +67,7 @@ interface DbInitMapper {
         CREATE TABLE IF NOT EXISTS `fb_thumbnail` (
             `thumbnail_id` INT NOT NULL AUTO_INCREMENT,
             `video_id` INT NOT NULL,
-            `thumbnail_path` VARCHAR(45) NOT NULL,
+            `thumbnail_path` VARCHAR(255) NOT NULL,
             PRIMARY KEY (`thumbnail_id`)
         )
     """)
