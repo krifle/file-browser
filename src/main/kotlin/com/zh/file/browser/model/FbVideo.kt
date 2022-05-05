@@ -9,5 +9,6 @@ data class FbVideo(
     var fps: String? = null,
     var codec: String? = null,
     var avgBitrate: String? = null,
-    var runningTime: Int? = null
+    var runningTime: Long? = null,
+    var fileSize: Long? = null
 )

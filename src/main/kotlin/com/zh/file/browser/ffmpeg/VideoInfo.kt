@@ -7,5 +7,6 @@ data class VideoInfo(
     val codec: String,
     val avgBitrate: Long,
     val runningTime: Long,
-    val fileSize: Long
+    val fileSize: Long,
+    val path: String
 )

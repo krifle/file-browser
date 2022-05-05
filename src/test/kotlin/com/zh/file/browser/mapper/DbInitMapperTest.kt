@@ -1,11 +1,12 @@
 package com.zh.file.browser.mapper
 
+import com.zh.file.browser.AbstractDbTest
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class DbInitMapperTest {
+class DbInitMapperTest : AbstractDbTest {
 
     @Autowired
     private lateinit var sut: DbInitMapper
