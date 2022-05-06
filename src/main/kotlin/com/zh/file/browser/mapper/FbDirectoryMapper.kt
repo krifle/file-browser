@@ -33,4 +33,16 @@ interface FbDirectoryMapper {
         )
     """)
     fun insertOne(@Param("fbDirectory") fbDirectory: FbDirectory)
+
+    @Select("""
+        SELECT
+            directory_id AS directoryId
+            , path AS path
+            , description AS description
+        FROM
+            fb_directory
+        WHERE
+            1 = 1
+    """)
+    fun listDirectory(): List<FbDirectory>
 }

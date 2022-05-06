@@ -1,5 +1,6 @@
 package com.zh.file.browser.mapper
 
+import com.google.gson.Gson
 import com.zh.file.browser.AbstractDbTest
 import com.zh.file.browser.model.FbDirectory
 import org.assertj.core.api.Assertions.assertThat
@@ -22,5 +23,14 @@ class FbDirectoryMapperTest : AbstractDbTest {
         assertThat(inserted.directoryId).isEqualTo(fbDirectory.directoryId)
         assertThat(inserted.path).isEqualTo(fbDirectory.path)
         assertThat(inserted.description).isEqualTo(fbDirectory.description)
+    }
+
+    @Test
+    fun `list all directory`() {
+        // given // when
+        val list = sut.listDirectory()
+
+        // then
+        println(Gson().toJson(list))
     }
 }

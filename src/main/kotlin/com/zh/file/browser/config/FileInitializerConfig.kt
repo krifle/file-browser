@@ -23,8 +23,6 @@ class FileInitializerConfig {
 
     @PostConstruct
     fun init() {
-        println("/////////////")
-        println(projectProperties.rootPath!!)
         val rootDirectory = File(projectProperties.rootPath!!)
         FileBrowser(rootDirectory).getDirectoryList()
             .map { file ->
