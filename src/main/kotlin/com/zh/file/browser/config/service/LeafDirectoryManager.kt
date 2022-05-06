@@ -108,5 +108,7 @@ class LeafDirectoryManager {
 
     @Transactional
     fun update(leafDirectory: LeafDirectory, fbDirectory: FbDirectory) {
+        // TODO ffmpeg 은 돌릴 필요 없음
+        // video 추가 된게 있는지 image 추가 되는게 있는지 확인
     }
 }

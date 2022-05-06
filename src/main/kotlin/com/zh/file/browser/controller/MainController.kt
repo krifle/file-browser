@@ -38,7 +38,7 @@ class MainController : JFrame("File Browser") {
         initPathPanel()
         actorSelectManager.init(mainForm2!!.actorSelectList)
         genreSelectManager.init(mainForm2!!.genreSelectList)
-        directoryListManager.init(mainForm2!!.directoryList)
+//        directoryListManager.init(mainForm2!!.directoryList)
 
         initStatusLabel()
     }

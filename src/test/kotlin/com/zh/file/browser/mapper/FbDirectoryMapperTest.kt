@@ -33,4 +33,10 @@ class FbDirectoryMapperTest : AbstractDbTest {
         // then
         println(Gson().toJson(list))
     }
+
+    @Test
+    fun `list All Joining`() {
+        val list = sut.listAllJoining()
+        println(Gson().toJson(list))
+    }
 }
