@@ -47,6 +47,9 @@ interface FbDirectoryMapper {
     """)
     fun listDirectory(): List<FbDirectory>
 
+    /**
+     * TODO condition 추가
+     */
     @Select("""
         SELECT
             d.directory_id AS directoryId

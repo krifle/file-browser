@@ -4,7 +4,10 @@
     <constraints>
       <xy x="20" y="20" width="917" height="723"/>
     </constraints>
-    <properties/>
+    <properties>
+      <minimumSize width="800" height="600"/>
+      <preferredSize width="1080" height="720"/>
+    </properties>
     <border type="line"/>
     <children>
       <grid id="a07f1" binding="pathPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
@@ -65,14 +68,102 @@
         <children>
           <component id="ed833" class="javax.swing.JList" binding="directoryList">
             <constraints border-constraint="West"/>
-            <properties/>
-          </component>
-          <component id="d7ad0" class="javax.swing.JLabel" binding="previewLabel">
-            <constraints border-constraint="Center"/>
             <properties>
-              <text value="Label"/>
+              <layoutOrientation value="0"/>
+              <maximumSize width="200" height="0"/>
+              <minimumSize width="200" height="0"/>
+              <preferredSize width="200" height="0"/>
+              <selectionMode value="0"/>
             </properties>
           </component>
+          <scrollpane id="31062" binding="directoryScroll">
+            <constraints border-constraint="Center"/>
+            <properties>
+              <maximumSize width="18" height="0"/>
+              <minimumSize width="18" height="0"/>
+              <opaque value="false"/>
+              <preferredSize width="18" height="0"/>
+              <verticalScrollBarPolicy value="22"/>
+            </properties>
+            <border type="none"/>
+            <children/>
+          </scrollpane>
+          <grid id="5891d" binding="detailPanel" layout-manager="GridLayoutManager" row-count="4" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints border-constraint="East"/>
+            <properties>
+              <minimumSize width="600" height="101"/>
+              <opaque value="true"/>
+              <preferredSize width="600" height="101"/>
+            </properties>
+            <border type="line"/>
+            <children>
+              <component id="80296" class="javax.swing.JLabel" binding="idLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="ID"/>
+                </properties>
+              </component>
+              <component id="d655a" class="javax.swing.JLabel" binding="castingLabel">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Label"/>
+                </properties>
+              </component>
+              <component id="ec3a5" class="javax.swing.JLabel" binding="castingDetailLabel">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Label"/>
+                </properties>
+              </component>
+              <component id="8de57" class="javax.swing.JLabel" binding="genreLabel">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Genre"/>
+                </properties>
+              </component>
+              <component id="bbeee" class="javax.swing.JLabel" binding="genreDetailLabel">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Label"/>
+                </properties>
+              </component>
+              <component id="19e42" class="javax.swing.JLabel" binding="descriptionLabel">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Label"/>
+                </properties>
+              </component>
+              <component id="a8f08" class="javax.swing.JLabel" binding="descriptionDetailLabel">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Label"/>
+                </properties>
+              </component>
+              <component id="5940f" class="javax.swing.JLabel" binding="idDetailLabel">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Label"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
         </children>
       </grid>
       <grid id="f37ee" binding="statusPanel" layout-manager="BorderLayout" hgap="0" vgap="0">

@@ -1,6 +1,6 @@
 package com.zh.file.browser
 
-import com.zh.file.browser.controller.MainController
+import com.zh.file.browser.controller.MainFormController
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.CommandLineRunner
 import org.springframework.context.annotation.Profile
@@ -12,11 +12,11 @@ import java.awt.EventQueue
 class FileBrowserApplicationCommandLineRunner : CommandLineRunner {
 
     @Autowired
-    private lateinit var mainController: MainController
+    private lateinit var mainFormController: MainFormController
 
     override fun run(vararg args: String?) {
         EventQueue.invokeLater {
-            mainController.isVisible = true
+            mainFormController.isVisible = true
         }
     }
 }

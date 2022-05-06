@@ -1,5 +1,7 @@
 package com.zh.file.browser.view;
 
+import com.intellij.uiDesigner.core.GridConstraints;
+import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
 
 import javax.swing.*;
@@ -18,8 +20,17 @@ public class MainForm2 {
     private JList<String> actorSelectList;
     private JList<String> genreSelectList;
     private JLabel statusLabel;
-    private JList directoryList;
-    private JLabel previewLabel;
+    private JList<ImageIcon> directoryList;
+    private JScrollPane directoryScroll;
+    private JPanel detailPanel;
+    private JLabel idLabel;
+    private JLabel castingLabel;
+    private JLabel castingDetailLabel;
+    private JLabel genreLabel;
+    private JLabel genreDetailLabel;
+    private JLabel descriptionLabel;
+    private JLabel descriptionDetailLabel;
+    private JLabel idDetailLabel;
 
     public JPanel getMainPanel() {
         return mainPanel;
@@ -41,8 +52,12 @@ public class MainForm2 {
         return genreSelectList;
     }
 
-    public JList getDirectoryList() {
+    public JList<ImageIcon> getDirectoryList() {
         return directoryList;
+    }
+
+    public JScrollPane getDirectoryScroll() {
+        return directoryScroll;
     }
 
     {
@@ -61,6 +76,8 @@ public class MainForm2 {
     private void $$$setupUI$$$() {
         mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout(10, 10));
+        mainPanel.setMinimumSize(new Dimension(800, 600));
+        mainPanel.setPreferredSize(new Dimension(1080, 720));
         mainPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.black), null,
             TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, null));
         pathPanel = new JPanel();
@@ -103,10 +120,66 @@ public class MainForm2 {
         previewPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.black), null,
             TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, null));
         directoryList = new JList();
+        directoryList.setLayoutOrientation(0);
+        directoryList.setMaximumSize(new Dimension(200, 0));
+        directoryList.setMinimumSize(new Dimension(200, 0));
+        directoryList.setPreferredSize(new Dimension(200, 0));
+        directoryList.setSelectionMode(0);
         previewPanel.add(directoryList, BorderLayout.WEST);
-        previewLabel = new JLabel();
-        previewLabel.setText("Label");
-        previewPanel.add(previewLabel, BorderLayout.CENTER);
+        directoryScroll = new JScrollPane();
+        directoryScroll.setMaximumSize(new Dimension(18, 0));
+        directoryScroll.setMinimumSize(new Dimension(18, 0));
+        directoryScroll.setOpaque(false);
+        directoryScroll.setPreferredSize(new Dimension(18, 0));
+        directoryScroll.setVerticalScrollBarPolicy(22);
+        previewPanel.add(directoryScroll, BorderLayout.CENTER);
+        detailPanel = new JPanel();
+        detailPanel.setLayout(new GridLayoutManager(4, 2, new Insets(0, 0, 0, 0), -1, -1));
+        detailPanel.setMinimumSize(new Dimension(600, 101));
+        detailPanel.setOpaque(true);
+        detailPanel.setPreferredSize(new Dimension(600, 101));
+        previewPanel.add(detailPanel, BorderLayout.EAST);
+        detailPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.black), null,
+            TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, null));
+        idLabel = new JLabel();
+        idLabel.setText("ID");
+        detailPanel.add(idLabel, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE,
+            GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        castingLabel = new JLabel();
+        castingLabel.setText("Label");
+        detailPanel.add(castingLabel,
+            new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE,
+                GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        castingDetailLabel = new JLabel();
+        castingDetailLabel.setText("Label");
+        detailPanel.add(castingDetailLabel,
+            new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE,
+                GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        genreLabel = new JLabel();
+        genreLabel.setText("Genre");
+        detailPanel.add(genreLabel,
+            new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE,
+                GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        genreDetailLabel = new JLabel();
+        genreDetailLabel.setText("Label");
+        detailPanel.add(genreDetailLabel,
+            new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE,
+                GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        descriptionLabel = new JLabel();
+        descriptionLabel.setText("Label");
+        detailPanel.add(descriptionLabel,
+            new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE,
+                GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        descriptionDetailLabel = new JLabel();
+        descriptionDetailLabel.setText("Label");
+        detailPanel.add(descriptionDetailLabel,
+            new GridConstraints(3, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE,
+                GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        idDetailLabel = new JLabel();
+        idDetailLabel.setText("Label");
+        detailPanel.add(idDetailLabel,
+            new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE,
+                GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         statusPanel = new JPanel();
         statusPanel.setLayout(new BorderLayout(0, 0));
         mainPanel.add(statusPanel, BorderLayout.SOUTH);

@@ -11,9 +11,9 @@ import org.springframework.stereotype.Controller
 import javax.annotation.PostConstruct
 import javax.swing.JFrame
 
+@Profile("!dao")
 @Controller
-@Profile("release")
-class MainController : JFrame("File Browser") {
+class MainFormController : JFrame("File Browser") {
 
     private var mainForm2: MainForm2? = null
 
@@ -38,7 +38,7 @@ class MainController : JFrame("File Browser") {
         initPathPanel()
         actorSelectManager.init(mainForm2!!.actorSelectList)
         genreSelectManager.init(mainForm2!!.genreSelectList)
-//        directoryListManager.init(mainForm2!!.directoryList)
+        directoryListManager.init(mainForm2!!.directoryList, mainForm2!!.directoryScroll)
 
         initStatusLabel()
     }
